@@ -1,0 +1,29 @@
+Student,Grade,Average,High,Low
+Alice Johnson,A,93.0,100,87
+Bob Smith,B,83.7,91,78
+Charlie Davis,A,90.7,95,85
+Diana Martinez,B,85.3,94,76
+Eve Wilson,C,75.7,85,67
+Frank Brown,D,63.2,72,55
+Grace Lee,A,97.5,100,95
+Henry Taylor,B,84.8,91,79
+Iris Chen,A,90.0,93,87
+Jack White,F,53.0,60,45
+Kelly Green,C,78.5,84,73
+Liam Black,B,88.5,92,85
+Maya Patel,A,96.5,99,94
+Noah Gray,D,68.5,75,62
+Olivia King,B,84.8,89,81
+Peter Hill,D,62.0,67,58
+Quinn Adams,A,90.5,93,88
+Rachel Cook,B,80.0,84,77
+Sam Reed,C,73.8,80,69
+Tina Bell,A,94.5,98,91
+
+Subject,Grade,Average,High,Low
+Math,C,79.1,98,45
+Science,B,80.1,96,52
+English,B,82.4,99,48
+History,B,81.2,97,55
+Art,B,82.7,97,60
+PE,B,84.8,100,58

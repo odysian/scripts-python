@@ -26,6 +26,7 @@ def grade_calculator():
     ) as file:
         csv_reader = csv.DictReader(file)
 
+        student_data = []
         subject_scores = defaultdict(list)
 
         print("\n=== Student Scores: ===")
@@ -41,10 +42,14 @@ def grade_calculator():
 
             avg = sum(scores) / len(scores)
             grade = letter_grade(avg)
+            high = max(scores)
+            low = min(scores)
 
             print(
-                f"{name}: Grade: {grade}, Average: {avg:.1f}, High: {max(scores)}, Low: {min(scores)}"
+                f"{name}: Grade: {grade}, Average: {avg:.1f}, High: {high}, Low: {low}"
             )
+
+            student_data.append([name, grade, f"{avg:.1f}", high, low])
 
         print("\n=== Subject Scores: ===")
 
@@ -56,6 +61,22 @@ def grade_calculator():
             print(
                 f"{subject}: Grade: {grade} Average: {avg:.1f}, High: {high}, Low: {low}"
             )
+
+    with open("report.csv", mode="w", newline="", encoding="utf-8") as outfile:
+        writer = csv.writer(outfile)
+
+        writer.writerow(["Student", "Grade", "Average", "High", "Low"])
+        writer.writerows(student_data)
+
+        writer.writerow([])
+
+        writer.writerow(["Subject", "Grade", "Average", "High", "Low"])
+        for subject, scores in subject_scores.items():
+            avg = sum(scores) / len(scores)
+            grade = letter_grade(avg)
+            high = max(scores)
+            low = min(scores)
+            writer.writerow([subject, grade, f"{avg:.1f}", high, low])
 
 
 if __name__ == "__main__":
